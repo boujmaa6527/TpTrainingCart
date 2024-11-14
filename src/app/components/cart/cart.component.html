@@ -1,0 +1,36 @@
+
+<!-- <h3 style="text-align: center;">PANIER</h3> -->
+
+<div class="container">
+    <ng-container>
+        <table class="table table-striped table-hover">
+    
+                <thead>
+                    <tr>
+                        <th>ID</th><th>NAME</th><th>QUANTITY</th><th>PRICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let item of items; let index = index" ng-controller="myCtrl">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.price}}</td>
+                        <td><a class="btn btn-danger"  (click) = clearCart(index)>Supprimer</a></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td></td>
+                        <td>{{totalPrice}}</td>
+                    </tr>
+                </tbody>
+                
+        </table>
+    </ng-container>
+    <button class="btn btn-success"  routerLink="/customer" >COMMANDER</button> 
+
+</div>
+
+
+    
