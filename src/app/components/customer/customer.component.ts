@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/model/customer.models';
 import { CartService } from 'src/app/services/cart.service';
-import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer',
@@ -9,17 +9,28 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-
-  customer!: Customer; 
-  constructor(public cartService : CartService) { }
+   
+  phone! : number;
+  mail!: string;
+  customer! : Customer;
+  listCustomer: Customer[] | undefined; 
+  constructor(public cartService : CartService,private router : Router) { }
 
   ngOnInit(): void {
-    console.log(this.customer);
+    
   }
   
   onSaveCustomer(customer: Customer){
     console.log(customer)
-    this.customer = customer;
+    this.cartService.addCustomer(customer);
+    this.router.navigateByUrl('order');
+  }
+  getCustomer(){
+    return this.customer;
   }
   
+  
+  
 }
+export { Customer };
+

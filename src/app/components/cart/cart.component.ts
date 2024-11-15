@@ -12,13 +12,12 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit{
 
-  itemss : CartService[] = [];
+ 
   items = this.cartService.getItems();
   constructor(private cartService : CartService, private router : Router){}
 
   ngOnInit(): void {
-    console.log(this.cartService);
-    console.log(this.cartService);
+    
     
   }
   

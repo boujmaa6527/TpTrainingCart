@@ -17,7 +17,7 @@ export class TrainingsComponent implements OnInit {
   training!: Trainings;  
   listTrainings : Trainings[] | undefined; 
   items: any;
-  constructor(public cartService :  CartService, private router : Router) {this.cartService = cartService; this.router = router }
+  constructor(public cartService :  CartService, private router : Router) { }
   
   ngOnInit(): void {
     this.listTrainings = [
@@ -34,8 +34,13 @@ export class TrainingsComponent implements OnInit {
   addTraining(training : any){
     console.log(training);
     this.training = training;
-    this.cartService.addTraining(training);
-    window.alert("your product has been added to the cart! ");
+    if(training.quantity > 0){
+      this.cartService.addTraining(training);
+      window.alert("your product has been added to the cart! ");
+    }else{
+      window.alert("La Quantité doit etre supérieur à 0");
+    }
+    
   }
   clearCart(training : Trainings){
    

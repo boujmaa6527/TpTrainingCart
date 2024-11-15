@@ -1,0 +1,16 @@
+<h1>RECAPITULATIF DE VOTRE COMMANDE</h1>
+<h2>Coordonnés</h2>
+<p  *ngFor = "let item of listCustomer;">
+    Nom: {{item.firstname}}<br>
+    prenom: {{item.lastname}}<br>
+    adresse: {{item.adresse}}<br>
+    Telephone: {{item.phone}}<br>
+    Email: {{item.mail}}
+</p>
+<h3>Produits</h3>
+<p *ngFor = "let item of items;">
+    Nom : {{item.name}}
+    Quantité: {{item.quantity}}
+    Prix: {{item.price}}€
+</p>
+<p> Total: {{totalPrice}} €</p>

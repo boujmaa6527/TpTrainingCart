@@ -16,5 +16,11 @@
          this.mail = mail;
     
      }
+     getFirstname(){
+        return this.firstname;
+     }
+     getPhone(){
+        return this.phone;
+     }
 
  } 
