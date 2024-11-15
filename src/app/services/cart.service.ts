@@ -23,15 +23,18 @@ export class CartService {
     console.log(customer)
     
   }
+  // add to customer to send in order page
   addCustomer(customer: Customer){
     console.log(customer);
    this.listCustomer.push(customer)
     
 
   }
+  //return list of item(trainigs)
   getItems(){
     return this.items;
   }
+  //return list of customer
   getCustomer(){
     return this.listCustomer;
   }

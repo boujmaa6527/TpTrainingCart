@@ -20,6 +20,7 @@ export class CustomerComponent implements OnInit {
     
   }
   
+  //use addCustomer() of cartservice and redirection to url 'order'
   onSaveCustomer(customer: Customer){
     console.log(customer)
     this.cartService.addCustomer(customer);
