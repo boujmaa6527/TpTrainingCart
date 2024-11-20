@@ -12,14 +12,18 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit{
 
- 
+  
   items = this.cartService.getItems();
+  customer!: Customer;
   constructor(private cartService : CartService, private router : Router){}
 
   ngOnInit(): void {
+    console.log(this.items);
     
     
   }
+
+ 
   
   //delete this item on index
   clearCart(index : number){
@@ -27,6 +31,7 @@ export class CartComponent implements OnInit{
     console.log(index);
     
   }
+ 
   get totalPrice(){
     let totalPrice = 0;
     for(var i = 0; i < this.items.length; i++){

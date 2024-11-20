@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Trainings } from 'src/app/model/trainings.models';
 import {CartService} from  'src/app/services/cart.service';
 import { Router} from  '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 
 
@@ -15,9 +16,12 @@ export class TrainingsComponent implements OnInit {
 
   carteService = Inject(CartService);
   training!: Trainings;  
-  listTrainings : Trainings[] | undefined; 
+  
+  listTrainings : Trainings[]  = []; 
   items: any;
-  constructor(public cartService :  CartService, private router : Router) { }
+  error: any;
+  
+  constructor(public cartService :  CartService, private router : Router, public apiService: ApiService) { }
   
   ngOnInit(): void {
     this.listTrainings = [
@@ -26,17 +30,19 @@ export class TrainingsComponent implements OnInit {
       {id:3, name : "Python", description:"Formation Python/Django 5 jours", price:1500, quantity:1},
     ];
   }
-  onAddToCart(training:Trainings){
-    this.cartService.addTraining(training);
-    this.router.navigateByUrl('cart');
+  onAddToCart(training:Trainings){ 
+   
+      this.cartService.addTraining(training);
+      this.router.navigateByUrl('cart');
+    
     
   }
   addTraining(training : any){
     console.log(training);
     this.training = training;
     if(training.quantity > 0){
-      this.cartService.addTraining(training);
-      window.alert("your product has been added to the cart! ");
+        this.cartService.addTraining(training);
+        window.alert("your product has been added to the cart! ");
     }else{
       window.alert("La Quantité doit etre supérieur à 0");
     }
@@ -54,6 +60,13 @@ export class TrainingsComponent implements OnInit {
         {id:3, name : "Python", description:"Formation Python/Django 5 jours", price:1500, quantity:1},
       ];
     }
+  getAllTrainings() {
+    this.apiService.getTrainings().subscribe({
+      next : (data) => this.listTrainings = data,
+      error : (err) => this.error = err.message,
+      complete : () => this.error =  null,
+    }); 
+  }
 }
 export { Trainings };
 

@@ -2,6 +2,8 @@ import { Component, Directive } from '@angular/core';
 import { Trainings } from './model/trainings.models';
 import { CartService } from './services/cart.service';
 import { inject } from '@angular/core/testing';
+import { window } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -17,7 +19,6 @@ export class CartComponent {
   
   ngOnInit(): void {
 
-    
   }
   
 }

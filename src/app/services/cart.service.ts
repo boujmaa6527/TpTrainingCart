@@ -13,9 +13,11 @@ export class CartService {
   
   listCustomer: Customer[] = [];
    items: Trainings[] = [];
+  localStorage: any;
   constructor() { }
 
   addTraining(training: Trainings){
+    
       this.items.push(training);
   }
 

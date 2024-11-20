@@ -7,6 +7,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { CartComponent } from './components/cart/cart.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { HttpClientModule} from '@angular/common/http';
+import { UsersComponent } from './components/users/users.component'
 
 @NgModule({
   declarations: [
@@ -14,13 +16,15 @@ import { OrdersComponent } from './components/orders/orders.component';
     TrainingsComponent,
     CartComponent,
     CustomerComponent,
-    OrdersComponent
+    OrdersComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule, 
     
     
   ],

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { Trainings } from '../trainings/trainings.component';
+import { Customer } from '../customer/customer.component';
 
 @Component({
   selector: 'app-orders',
@@ -11,11 +12,13 @@ import { Trainings } from '../trainings/trainings.component';
 export class OrdersComponent implements OnInit {
 [x: string]: any;
 
+  customer!: Customer;
   listCustomer = this.cartService.getCustomer();
   items = this.cartService.getItems();
   constructor(private cartService : CartService, private router : Router) { }
 
   ngOnInit(): void {
+    
     
   }
 
@@ -29,5 +32,6 @@ export class OrdersComponent implements OnInit {
     }
     return totalPrice;
   }
+  
 
 }

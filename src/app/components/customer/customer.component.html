@@ -1,25 +1,25 @@
 <div class="container">
     <div class="col-md-6">
-        <form #f="ngForm" (ngSubmit)="onSaveCustomer(f.value)">
+        <form #f="ngForm" (ngSubmit)="onSaveCustomer(f.value)"  [formGroup]="form">
             <div class="form-group">
                 <label class="control-label">Nom :</label>
-                <input type="text" ngModel name="firstname" required class="form-control">
+                <input type="text"  name="firstname"  id="name"  formControlName="firstname"  required class="form-control">
             </div>
             <div class="form-group">
                 <label class="control-label">Prenom: </label>
-                <input type="text" ngModel name="lastname" required class="form-control">
+                <input type="text"   name="lastname" formControlName="lastname" required class="form-control">
             </div>
             <div class="form-group">
                 <label class="control-label">Adresse: </label>
-                <input type="text" ngModel name="adresse" required class="form-control">
+                <input type="text"   name="adresse"     formControlName="adresse" required class="form-control">
             </div>
             <div class="form-group">
                 <label class="control-label">Telephone: </label>
-                <input type="text"  ngModel  name="phone" required class="form-control" >
+                <input type="text"    name="phone" formControlName="phone"  required class="form-control" >
             </div>
             <div class="form-group">
                 <label class="control-label">Email: </label>
-                <input type="text" ngModel name="mail" required class="form-control" >
+                <input type="text"   name="mail"    formControlName="mail"   required class="form-control" >
             </div>
             <button type="submit" [disabled]="!f.valid"    class="btn btn-primary" >Valider</button>
 
