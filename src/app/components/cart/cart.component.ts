@@ -3,6 +3,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { Trainings } from '../trainings/trainings.component';
 import { Customer } from 'src/app/model/customer.models';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,12 +16,11 @@ export class CartComponent implements OnInit{
   
   items = this.cartService.getItems();
   customer!: Customer;
-  constructor(private cartService : CartService, private router : Router){}
+  constructor(private cartService : CartService, private router : Router, public storageService: StorageService){}
 
   ngOnInit(): void {
     console.log(this.items);
-    
-    
+   
   }
 
  
@@ -42,5 +42,6 @@ export class CartComponent implements OnInit{
     }
     return totalPrice;
   }
+  
 
 }

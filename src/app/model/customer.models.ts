@@ -17,6 +17,7 @@
          this.mail = mail;
     
      }
+     
      getFirstname(){
         return this.firstname;
      }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { Trainings } from '../trainings/trainings.component';
 import { Customer } from '../customer/customer.component';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-orders',
@@ -10,12 +11,13 @@ import { Customer } from '../customer/customer.component';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-[x: string]: any;
+
 
   customer!: Customer;
+  training!: Trainings;
   listCustomer = this.cartService.getCustomer();
   items = this.cartService.getItems();
-  constructor(private cartService : CartService, private router : Router) { }
+  constructor(private cartService : CartService, private router : Router, private storageService : StorageService) { }
 
   ngOnInit(): void {
     
@@ -32,6 +34,32 @@ export class OrdersComponent implements OnInit {
     }
     return totalPrice;
   }
+  localSt(items: Trainings){
+   
+    localStorage.setItem("name", items.name);
+    localStorage.setItem("quantity", items.quantity.toString());
+    localStorage.setItem("price", items.price.toString());
+   
+    localStorage.getItem(this.customer.firstname);
+    localStorage.getItem(this.customer.lastname);
+    localStorage.getItem(this.customer.adresse);
+    localStorage.getItem(this.customer.phone);
+    localStorage.getItem(this.customer.mail);
+
+   
+   
+
+  }
+  loadData(item: Trainings){
+    const name = this.storageService.getItem("name");
+    const quantity = this.storageService.getItem("quantity");
+    const price = this.storageService.getItem("price");
+    
+    localStorage.getItem(item.name);
+    localStorage.getItem(item.quantity.toString());
+    localStorage.getItem(item.price.toString());
+  
+ }
   
 
 }

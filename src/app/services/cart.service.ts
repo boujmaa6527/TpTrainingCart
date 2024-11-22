@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Trainings } from '../components/trainings/trainings.component';
 //import { Customer } from '../model/customer.models';
 import { Customer } from '../components/customer/customer.component';
+import { User } from '../model/user.models';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Customer } from '../components/customer/customer.component';
 })
 export class CartService {
 
-  
+  listUser: User[] = [];
   listCustomer: Customer[] = [];
    items: Trainings[] = [];
   localStorage: any;
@@ -32,6 +33,13 @@ export class CartService {
     
 
   }
+  onSaveUser(user: User){
+    console.log(user);
+  }
+  addUser(user: User){
+    console.log(user);
+    this.listUser.push(user);
+  }
   //return list of item(trainigs)
   getItems(){
     return this.items;
@@ -39,6 +47,9 @@ export class CartService {
   //return list of customer
   getCustomer(){
     return this.listCustomer;
+  }
+  getUser(){
+    return this.listUser;
   }
   itemsCount(){
     return this.items.length;

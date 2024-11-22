@@ -15,7 +15,6 @@ export class CustomerComponent implements OnInit {
   customer! : Customer;
   maHashmap: { [key: string]:any} = {};
   form: FormGroup;
-  //localStorage : Window["localStorage"] | undefined;
   listCustomer: Customer[] | undefined; 
   constructor(public cartService : CartService,private router : Router, public fb: FormBuilder, public storageService: StorageService) { 
     this.form = this.fb.group({
@@ -48,7 +47,7 @@ export class CustomerComponent implements OnInit {
     // alert(data);
     // this.session = JSON.parse(data);
     this.localSt(customer);
-    this.loadFormData();
+    
        
   }
 
@@ -95,9 +94,6 @@ export class CustomerComponent implements OnInit {
     if(mail) {
       this.form?.get("mail")?.setValue(mail);
     }
-    
-
-
 
   }
   

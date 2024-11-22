@@ -9,10 +9,9 @@ import { UsersComponent } from './components/users/users.component';
 const routes: Routes = [
   {path : "trainings", component : TrainingsComponent },
   {path : "cart", component : CartComponent },
-  {path: "customer", component: CustomerComponent},
-  {path: "order", component: OrdersComponent},
-  {path: "user", component : UsersComponent}
-
+  {path : "customer", component : CustomerComponent },
+  {path : "order", component : OrdersComponent },
+  {path : "users", component : UsersComponent }
 ];
 
 @NgModule({

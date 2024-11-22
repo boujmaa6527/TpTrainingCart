@@ -1,20 +1,26 @@
 <div class="container">
-    <div class="col-md-6">
-        <form #f="ngForm" >
-            <div class="form-group">
-                <label class="control-label">Email :</label>
-                <input type="text"  name="mail"  id="mail"  formControlName="password"  required class="form-control">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Password: </label>
-                <input type="password"   name="password" formControlName="password" required class="form-control">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Role: </label>
-                <input type="text"   name="role"     formControlName="role" required class="form-control">
-            </div>
-            <button type="submit" [disabled]="!f.valid"    class="btn btn-primary" >Valider</button>
+    <div class="main">
+        <div class="col-md-6 signup">
+            <h1>AUTHENTIFICATION</h1>
+            <form  #f="ngForm"    [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+                <div class="form-group">
+                    <label class="control-label">Email :</label>
+                    <input type="text"  name="mail"  id="mail"  formControlName= "email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password: </label>
+                    <input type="password"   name="password"   formControlName= "password" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Comfirme Password: </label>
+                    <input type="password"   name="password" formControlName= "password" required class="form-control">
+                </div>        
+                <button type="submit" [disabled]="!userForm.valid"    class="btn btn-primary" >Valider</button>
+    
+            </form> 
+        </div>
+      
 
-        </form> 
     </div>
+    
 </div>

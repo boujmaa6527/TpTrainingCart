@@ -34,6 +34,13 @@
       "description": "tout sur le PHP 10 jours",
       "price": 2000,
       "quantity": 1
+    },
+    {
+      "id": 1,
+      "name": "java",
+      "description": "tout savoir sur le Java",
+      "price": 2000,
+      "quantity": 1
     }
   ]
 }
