@@ -3,6 +3,7 @@ import { Trainings } from './model/trainings.models';
 import { CartService } from './services/cart.service';
 import { inject } from '@angular/core/testing';
 import { window } from 'rxjs';
+import { AuthService } from './services/auth.service';
 
 
 @Component({
@@ -12,13 +13,6 @@ import { window } from 'rxjs';
 })
 export class AppComponent {
   title = 'trainings-front-app';
-}
-@Directive()
-export class CartComponent {
-  cart! : CartService;
-  
-  ngOnInit(): void {
 
-  }
-  
+  constructor(public authService : AuthService){}
 }

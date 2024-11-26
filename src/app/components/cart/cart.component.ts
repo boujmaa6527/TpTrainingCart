@@ -22,8 +22,6 @@ export class CartComponent implements OnInit{
     console.log(this.items);
    
   }
-
- 
   
   //delete this item on index
   clearCart(index : number){
@@ -42,6 +40,7 @@ export class CartComponent implements OnInit{
     }
     return totalPrice;
   }
+
   
 
 }

@@ -4,6 +4,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.models';
 import { StorageService } from 'src/app/services/storage.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -16,19 +17,30 @@ export class UsersComponent implements OnInit {
   password!:User;
   userForm!: FormGroup ; 
   name!: FormControl;
-  constructor(private router : Router, public carteSerice: CartService, public storageService: StorageService) {
-    let user = this.carteSerice.getUser();
+  constructor(private router : Router, public carteSerice: CartService, public storageService: StorageService, public authService: AuthService) {
+    let user = this.authService.getUser();
     this.userForm = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl('')
+      email: new FormControl(user?.email),
+      password: new FormControl(user?.password)
     });
    
    }
    onSubmit(){
-    console.log(this.userForm.value);
-    this.localSt(this.userForm)
-    alert("Vous etes connectés !")
-    this.router.navigateByUrl('order');
+    console.log(this.userForm.value, "onSubmit");
+    //this.localSt(this.userForm)
+   
+    if(this.userForm.valid){
+      this.authService.login(this.userForm.value.email, this.userForm.value.password);
+      if(this.authService.isLogged()){
+        console.log(this.authService.login);
+        alert("Vous etes connectés !")
+        this.router.navigateByUrl('cart');
+      }
+
+    }
+   
+   
+   
     
    }
    onSaveUser(user: User){
@@ -42,7 +54,10 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.userForm);
-    this.loadFormData();
+    //this.loadFormData();
+    if(this.authService.isLogged()){
+      this.router.navigateByUrl('order');
+    }
    
   }
   localSt(userForm: FormGroup){
@@ -61,5 +76,6 @@ export class UsersComponent implements OnInit {
     }
 
   }
+
 
 }

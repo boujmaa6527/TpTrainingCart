@@ -15,6 +15,7 @@ export class OrdersComponent implements OnInit {
 
   customer!: Customer;
   training!: Trainings;
+  listUser = this.cartService.getUser();
   listCustomer = this.cartService.getCustomer();
   items = this.cartService.getItems();
   constructor(private cartService : CartService, private router : Router, private storageService : StorageService) { }
