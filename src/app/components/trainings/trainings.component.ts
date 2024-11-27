@@ -65,10 +65,15 @@ export class TrainingsComponent implements OnInit {
     }); 
   }
   deleteTraining(id: number){
-      this.apiService.deleteTraining(id).subscribe(re =>{
-        alert("Formation Supprimé avec succes!")
+     let del = confirm("Etes-vous sur de vouloir supprimer ?"); 
+      if(del){
+        this.apiService.deleteTraining(id).subscribe(re =>{
+          alert("Formation Supprimé avec succes!")
+          this.router.navigateByUrl('trainings');
+        })
         this.router.navigateByUrl('trainings');
-      })
+      }
+    
       
   }
 }

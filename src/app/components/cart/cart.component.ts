@@ -1,6 +1,5 @@
 import { Component,Inject,OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { Trainings } from '../trainings/trainings.component';
 import { Customer } from 'src/app/model/customer.models';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';

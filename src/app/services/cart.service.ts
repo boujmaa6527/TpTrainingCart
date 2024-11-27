@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-//import { Trainings } from '../model/trainings.models';
 import { Trainings } from '../components/trainings/trainings.component';
-//import { Customer } from '../model/customer.models';
 import { Customer } from '../components/customer/customer.component';
 import { User } from '../model/user.models';
 

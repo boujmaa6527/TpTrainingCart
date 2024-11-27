@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TrainingsComponent } from './components/trainings/trainings.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -14,7 +14,7 @@ const routes: Routes = [
   {path : "order", component : OrdersComponent },
   {path : "users", component : UsersComponent },
   {path: "training/:id", component: TrainingComponent},
-  {path: "traninig", component: TrainingComponent},
+  {path: "training", component: TrainingComponent},
   {path: '', redirectTo: 'trainings', pathMatch:'full'},
   {path: '**', redirectTo: 'users'},
 ];

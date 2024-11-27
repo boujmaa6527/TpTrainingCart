@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Training } from 'src/app/model/training.models';
-import { CartService } from 'src/app/services/cart.service';
 import { ApiService } from 'src/app/services/api.service';
-import { Trainings } from '../trainings/trainings.component';
+
 
 
 @Component({
@@ -36,17 +35,11 @@ export class TrainingComponent implements OnInit {
       }
 
     })
-
-
-
     this.myForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
       price: ['', Validators.required],
       quantity: [1]
-
-
-
 
     })
     console.log(this.myForm, "myform")
@@ -56,6 +49,7 @@ export class TrainingComponent implements OnInit {
     this.apiService.addTraining(data).subscribe((res => {
       //this.myForm.reset();
       alert("Formation ajouté avec succes!")
+      this.router.navigateByUrl("trainings")
 
     }))
     console.log(this.myForm.value)

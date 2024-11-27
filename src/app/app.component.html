@@ -9,7 +9,7 @@
         <a   class="nav-link"  routerLink = "/cart">Contenu du Panier</a>
       </li>
       <li>
-        <a   class="nav-link"  routerLink = "/traninig">Ajouter une Formation</a>
+        <a   class="nav-link"  routerLink = "/training">Ajouter une Formation</a>
       </li>
       <li>
         <a   class="nav-link"  (click)="disConnect()"   routerLink = "/users">{{authService.isLogged()? "Deconnexion" : "Connexion"}} {{authService.getUser()?.email}}</a>

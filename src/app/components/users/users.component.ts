@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl} from '@angular/forms';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.models';

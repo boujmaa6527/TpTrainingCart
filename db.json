@@ -1,35 +1,7 @@
 {
   "trainings": [
     {
-      "id": 2,
-      "name": "DotNet",
-      "description": "Formation DotNet 3 jours",
-      "price": "2000",
-      "quantity": 1
-    },
-    {
-      "id": 3,
-      "name": "Python",
-      "description": "Formation Python/Django 5 jours",
-      "price": "2000",
-      "quantity": 1
-    },
-    {
-      "id": 4,
-      "name": "Php",
-      "description": "Initiation au Dev/Web avec hp 4 jours",
-      "price": "1300",
-      "quantity": 1
-    },
-    {
       "id": 10,
-      "name": "Php Symphony",
-      "description": "tout sur le PHP 10 jours",
-      "price": 2000,
-      "quantity": 1
-    },
-    {
-      "id": 11,
       "name": "Php Symphony",
       "description": "tout sur le PHP 10 jours",
       "price": 2000,
@@ -45,38 +17,30 @@
     {
       "name": "SQL",
       "description": "Tout le SQL et les requetes",
-      "price": "1500",
-      "id": 13
+      "price": "1520",
+      "quantity": 1,
+      "id": 19
+    },
+    {
+      "name": "Cobol ",
+      "description": "tout sur le cobol en 20 jours",
+      "price": "1520",
+      "quantity": 1,
+      "id": 20
     },
     {
       "name": "Cobol",
-      "description": "tout sur le cobol en 16 jours",
-      "price": "1536",
-      "id": 14
-    },
-    {
-      "name": "Cobol",
-      "description": "tout sur le cobol en 16 jours",
-      "price": "1536",
-      "id": 15
-    },
-    {
-      "name": "ruby",
-      "description": "tout sur le ruby en 15 jours",
-      "price": "1578",
-      "id": 16
-    },
-    {
-      "name": "ruby",
-      "description": "tout sur le ruby en 15 jours",
-      "price": "1578",
-      "id": 17
+      "description": "tout sur le cobol en 20 jours",
+      "price": "1520",
+      "quantity": 1,
+      "id": 21
     },
     {
       "name": "SQL",
       "description": "Tout le SQL et les requetes",
       "price": "1500",
-      "id": 18
+      "quantity": 1,
+      "id": 22
     }
   ]
 }

@@ -1,8 +1,4 @@
 import { Component, Directive } from '@angular/core';
-import { Trainings } from './model/trainings.models';
-import { CartService } from './services/cart.service';
-import { inject } from '@angular/core/testing';
-import { window } from 'rxjs';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 
