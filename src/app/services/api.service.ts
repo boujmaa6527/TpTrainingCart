@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Trainings } from '../model/trainings.models';
 import { environment } from 'src/environments/environment';
+import { Training } from '../model/training.models';
 
 @Injectable({
   providedIn: 'root'
@@ -16,4 +17,12 @@ export class ApiService {
   public getTraining(id: number){
     return this.http.get<Trainings[]>(environment.host+ "/trainings/" + id);
   }
+ 
+  addTraining(data: Training){
+    return this.http.post<Training>(environment.host + "/trainings", data);
+  }
+  deleteTraining(id: number){
+    return this.http.delete<Training>(environment.host + "/trainings/"+ id)
+  }
+  
 }

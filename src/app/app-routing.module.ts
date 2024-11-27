@@ -5,13 +5,17 @@ import { CartComponent } from './components/cart/cart.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { UsersComponent } from './components/users/users.component';
+import { TrainingComponent } from './components/training/training.component';
 
 const routes: Routes = [
   {path : "trainings", component : TrainingsComponent },
   {path : "cart", component : CartComponent },
   {path : "customer", component : CustomerComponent },
   {path : "order", component : OrdersComponent },
-  {path : "users", component : UsersComponent }
+  {path : "users", component : UsersComponent },
+  {path: "traninig", component: TrainingComponent},
+  {path: "training", redirectTo: "training", pathMatch:'full'},
+  {path: '', redirectTo: 'trainings', pathMatch:'full'},
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@ export class AppComponent {
   title = 'trainings-front-app';
 
   constructor(public authService : AuthService, private route: Router){}
-  diConnect(){
+  disConnect(){
     if(this.authService.isLogged()){
       this.authService.logOut();
     }else{

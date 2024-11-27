@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="main">
+        <div class="col-md-6 ">
+            <h1>Ajouter une formation</h1>
+            <form  #f="ngForm"   (ngSubmit)="submitTraining(f.value)" [formGroup]="myForm" >
+                <div class="form-group">
+                    <label class="control-label">Nom de la formation :</label>
+                    <input type="text"  name="name"  id="nameOftraining"  formControlName= "name" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Description: </label>
+                    <input type="text"   name="description"   formControlName= "description" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prix: </label>
+                    <input type="text"   name="price" formControlName= "price" required class="form-control">
+                </div>        
+                <button type="submit"  [disabled]="!this.myForm"    class="btn btn-primary" >Ajouter</button>
+    
+            </form> 
+        </div>
+      
+
+    </div>
+    
+</div>

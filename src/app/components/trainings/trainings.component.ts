@@ -24,11 +24,8 @@ export class TrainingsComponent implements OnInit {
   constructor(public cartService :  CartService, private router : Router, public apiService: ApiService) { }
   
   ngOnInit(): void {
-    this.listTrainings = [
-      {id:1, name : "Java", description:"Formation java SE", price:1500, quantity:1},
-      {id:2, name : "DotNet", description:"Formation DotNet 3 jours", price:1000, quantity:1},
-      {id:3, name : "Python", description:"Formation Python/Django 5 jours", price:1500, quantity:1},
-    ];
+    this.getAllTrainings();
+    
   }
   onAddToCart(training:Trainings){ 
    
@@ -53,19 +50,26 @@ export class TrainingsComponent implements OnInit {
     this.items.clearCart(training);
     console.log(training);
   }
-    displayTrainings(){
-      this.listTrainings = [
-        {id:1, name : "Java", description:"Formation java SE", price:1500, quantity:1},
-        {id:2, name : "DotNet", description:"Formation DotNet 3 jours", price:1000, quantity:1},
-        {id:3, name : "Python", description:"Formation Python/Django 5 jours", price:1500, quantity:1},
-      ];
-    }
+    // displayTrainings(){
+    //   // this.listTrainings = [
+    //   //   {id:1, name : "Java", description:"Formation java SE", price:1500, quantity:1},
+    //   //   {id:2, name : "DotNet", description:"Formation DotNet 3 jours", price:1000, quantity:1},
+    //   //   {id:3, name : "Python", description:"Formation Python/Django 5 jours", price:1500, quantity:1},
+    //   // ];
+    // }
   getAllTrainings() {
     this.apiService.getTrainings().subscribe({
       next : (data) => this.listTrainings = data,
       error : (err) => this.error = err.message,
       complete : () => this.error =  null,
     }); 
+  }
+  deleteTraining(id: number){
+      this.apiService.deleteTraining(id).subscribe(re =>{
+        alert("Formation Supprimé avec succes!")
+        this.router.navigateByUrl('trainings');
+      })
+      
   }
 }
 export { Trainings };

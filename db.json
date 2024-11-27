@@ -41,6 +41,68 @@
       "description": "tout savoir sur le Java",
       "price": 2000,
       "quantity": 1
+    },
+    {
+      "name": "SQL",
+      "description": "Tout le SQL et les requetes",
+      "price": "1500",
+      "id": 12
+    },
+    {
+      "name": "SQL",
+      "description": "Tout le SQL et les requetes",
+      "price": "1500",
+      "id": 13
+    },
+    {
+      "name": "Cobol",
+      "description": "tout sur le cobol en 16 jours",
+      "price": "1536",
+      "id": 14
+    },
+    {
+      "name": "Cobol",
+      "description": "tout sur le cobol en 16 jours",
+      "price": "1536",
+      "id": 15
+    },
+    {
+      "name": "ruby",
+      "description": "tout sur le ruby en 15 jours",
+      "price": "1578",
+      "id": 16
+    },
+    {
+      "name": "ruby",
+      "description": "tout sur le ruby en 15 jours",
+      "price": "1578",
+      "id": 17
+    },
+    {
+      "name": "SQL",
+      "description": "Tout le SQL et les requetes",
+      "price": "1500",
+      "id": 18
+    },
+    {
+      "name": "SQL",
+      "description": "Tout le SQL et les requetes",
+      "price": "1500",
+      "id": 19
+    },
+    {
+      "name": "Cobol",
+      "description": "tout sur le cobol en 16 jours",
+      "price": "1500",
+      "quantity": 1,
+      "id": 20
+    },
+    {
+      "name": "Cobol",
+      "description": "tout sur le cobol en 16 jours",
+      "price": "1536",
+      "quantity": 1,
+      "id": 21
     }
   ]
 }
