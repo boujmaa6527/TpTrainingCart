@@ -13,9 +13,10 @@ const routes: Routes = [
   {path : "customer", component : CustomerComponent },
   {path : "order", component : OrdersComponent },
   {path : "users", component : UsersComponent },
+  {path: "training/:id", component: TrainingComponent},
   {path: "traninig", component: TrainingComponent},
-  {path: "training", redirectTo: "training", pathMatch:'full'},
   {path: '', redirectTo: 'trainings', pathMatch:'full'},
+  {path: '**', redirectTo: 'users'},
 ];
 
 @NgModule({

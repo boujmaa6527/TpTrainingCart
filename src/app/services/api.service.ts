@@ -24,5 +24,14 @@ export class ApiService {
   deleteTraining(id: number){
     return this.http.delete<Training>(environment.host + "/trainings/"+ id)
   }
+  fetchData(id: number){
+    return this.http.get<Training>(environment.host + "/trainings/" +id)
+  }
+  //update Data
+  upDateTraining(data: Training, id:number){
+
+      return this.http.put<Training>(environment.host + "/trainings/" +id, data);
+  }
+
   
 }

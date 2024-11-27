@@ -46,12 +46,6 @@
       "name": "SQL",
       "description": "Tout le SQL et les requetes",
       "price": "1500",
-      "id": 12
-    },
-    {
-      "name": "SQL",
-      "description": "Tout le SQL et les requetes",
-      "price": "1500",
       "id": 13
     },
     {
@@ -83,26 +77,6 @@
       "description": "Tout le SQL et les requetes",
       "price": "1500",
       "id": 18
-    },
-    {
-      "name": "SQL",
-      "description": "Tout le SQL et les requetes",
-      "price": "1500",
-      "id": 19
-    },
-    {
-      "name": "Cobol",
-      "description": "tout sur le cobol en 16 jours",
-      "price": "1500",
-      "quantity": 1,
-      "id": 20
-    },
-    {
-      "name": "Cobol",
-      "description": "tout sur le cobol en 16 jours",
-      "price": "1536",
-      "quantity": 1,
-      "id": 21
     }
   ]
 }
