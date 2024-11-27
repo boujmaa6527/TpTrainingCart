@@ -4,6 +4,7 @@ import { CartService } from './services/cart.service';
 import { inject } from '@angular/core/testing';
 import { window } from 'rxjs';
 import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,5 +15,12 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'trainings-front-app';
 
-  constructor(public authService : AuthService){}
+  constructor(public authService : AuthService, private route: Router){}
+  diConnect(){
+    if(this.authService.isLogged()){
+      this.authService.logOut();
+    }else{
+      this.route.navigateByUrl("users")
+    }
+  }
 }
