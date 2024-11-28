@@ -3,6 +3,7 @@ import { Trainings } from 'src/app/model/trainings.models';
 import {CartService} from  'src/app/services/cart.service';
 import { Router} from  '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -21,7 +22,7 @@ export class TrainingsComponent implements OnInit {
   items: any;
   error: any;
   
-  constructor(public cartService :  CartService, private router : Router, public apiService: ApiService) { }
+  constructor(public cartService :  CartService, private router : Router, public apiService: ApiService, public authService : AuthService) { }
   
   ngOnInit(): void {
     this.getAllTrainings();
@@ -68,8 +69,7 @@ export class TrainingsComponent implements OnInit {
      let del = confirm("Etes-vous sur de vouloir supprimer ?"); 
       if(del){
         this.apiService.deleteTraining(id).subscribe(re =>{
-          alert("Formation Supprimé avec succes!")
-          this.router.navigateByUrl('trainings');
+          this.getAllTrainings();
         })
         this.router.navigateByUrl('trainings');
       }

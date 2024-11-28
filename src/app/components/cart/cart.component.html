@@ -29,7 +29,8 @@
                 
         </table>
     </ng-container>
-    <button class="btn btn-success"  routerLink="/customer" >COMMANDER</button> 
+    <button class="btn btn-success" (click)="isCommandLogged()">COMMANDER</button> 
+    <p  style="color: rosybrown;" *ngIf="message">Veuillez vous connectez</p>
 
 </div>
 

@@ -6,8 +6,13 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { UsersComponent } from './components/users/users.component';
 import { TrainingComponent } from './components/training/training.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuard } from './components/admin.guard';
+import { UserGuard } from './components/user.guard';
 
 const routes: Routes = [
+  {path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
+  {path: 'user', component: UsersComponent, canActivate: [UserGuard] },
   {path : "trainings", component : TrainingsComponent },
   {path : "cart", component : CartComponent },
   {path : "customer", component : CustomerComponent },

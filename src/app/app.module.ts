@@ -9,7 +9,9 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
-import { TrainingComponent } from './components/training/training.component'
+import { TrainingComponent } from './components/training/training.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { UserComponent } from './components/user/user.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TrainingComponent } from './components/training/training.component'
     CustomerComponent,
     OrdersComponent,
     UsersComponent,
-    TrainingComponent
+    TrainingComponent,
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

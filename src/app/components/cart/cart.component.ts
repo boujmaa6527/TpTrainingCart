@@ -3,6 +3,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { Customer } from 'src/app/model/customer.models';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,10 +13,10 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class CartComponent implements OnInit{
 
-  
+  message ="";
   items = this.cartService.getItems();
   customer!: Customer;
-  constructor(private cartService : CartService, private router : Router, public storageService: StorageService){}
+  constructor(private cartService : CartService, private router : Router, public storageService: StorageService, public authService : AuthService){}
 
   ngOnInit(): void {
     console.log(this.items);
@@ -28,6 +29,16 @@ export class CartComponent implements OnInit{
     console.log(index);
     
   }
+  isCommandLogged():void{
+    if(this.authService.isLogged()){
+      this.router.navigateByUrl("order")
+       
+    }else{
+        this.message = "Veuillez-vous connecter "
+    }
+   
+  }
+  
  
   get totalPrice(){
     let totalPrice = 0;

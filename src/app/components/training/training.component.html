@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Prix: </label>
-                    <input type="text"   name="price" formControlName= "price" required class="form-control">
+                    <input type="number"   name="price" formControlName= "price" required class="form-control">
                 </div>        
                 <button type="submit"   [disabled]="!this.myForm"  class="btn btn-primary" >Ajouter</button>
     
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Prix: </label>
-                    <input type="text"   [(ngModel)] = "traningData.price" name="price"   class="form-control">
+                    <input type="number"   [(ngModel)] = "traningData.price" name="price"   class="form-control">
                 </div>     
                 <button type="submit" (click)="upDate()" class="btn btn-primary" >Modifier</button>
     

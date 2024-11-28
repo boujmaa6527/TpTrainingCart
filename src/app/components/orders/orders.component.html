@@ -1,20 +1,40 @@
 
 <div class="container">
-    <h1>RECAPITULATIF DE VOTRE COMMANDE</h1>
-    <h2>Coordonnés</h2>
-    <p  *ngFor = "let item of listCustomer;">
-        Nom : {{item.firstname}}<br>
-        Prénom : {{item.lastname}}<br>
-        Adresse : {{item.adresse}}<br>
-        Télephone : {{item.phone}}<br>
-        Email : {{item.mail}}
-    </p>
-    <h3>Produits</h3>
-    <p *ngFor = "let item of items;">
-        Nom : {{item.name}}
-        Quantité : {{item.quantity}}
-        Prix : {{item.price}}€
-    </p>
-    <p> Total : {{totalPrice}} €</p>
-
+    <div class="order-summary">
+        <h2>Récapitulatif de Commande</h2>
+        <div class="client-info" *ngFor=" let item of listCustomer;" >
+            <h4>Informations Client</h4>
+            <p><strong>Nom :</strong>{{item.firstname}} </p>
+            <p><strong>Prenom :</strong>{{item.lastname}} </p>
+            <p><strong>Adresse :</strong> {{item.adresse}}</p>
+            <p><strong>Email :</strong> {{item.phone}}</p>
+            <p><strong>Téléphone :</strong> {{item.phone}}</p>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items;">
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td> {{item.price}}€</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="text-right">Total</td>
+                    <td>{{totalPrice}} €</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

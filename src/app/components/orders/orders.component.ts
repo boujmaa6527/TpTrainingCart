@@ -12,6 +12,10 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class OrdersComponent implements OnInit {
 
+  dateOrder : Date = new Date();
+  showModal = false;
+  modalTitle=  "Commande confirmée";
+  modalContent = "Votre commande a bien été pris en compte."
 
   customer!: Customer;
   training!: Trainings;

@@ -36,9 +36,9 @@
       "id": 21
     },
     {
-      "name": "SQL",
-      "description": "Tout le SQL et les requetes",
-      "price": "1500",
+      "name": "Angular",
+      "description": "tout sur le Angular",
+      "price": 1690,
       "quantity": 1,
       "id": 22
     }
