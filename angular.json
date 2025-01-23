@@ -103,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "trainings-front-app"
+  "defaultProject": "trainings-front-app",
+  "cli": {
+    "analytics": false
+  }
 }
